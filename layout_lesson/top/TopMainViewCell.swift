@@ -19,11 +19,18 @@ extension TopMainViewCellDelegate {
 // MARK: - Property
 class TopMainViewCell: BaseTableViewCell {
     weak var delegate: TopMainViewCellDelegate? = nil
+    @IBOutlet var labelLine: UILabel!
+    @IBOutlet var iconImage: UIImageView!
 }
 
 // MARK: - Life cycle
 extension TopMainViewCell {
-    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        iconImage.layer.cornerRadius = iconImage.frame.width / 2
+        iconImage.layer.borderWidth = 10
+        iconImage.layer.borderColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+    }
 }
 
 // MARK: - Protocol
